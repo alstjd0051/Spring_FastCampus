@@ -1,19 +1,33 @@
 package com.company.design;
 
-import java.util.concurrent.atomic.AtomicLong;
-
-import com.company.design.adapter.*;
-import com.company.design.aop.AopBrowser;
-import com.company.design.proxy.Browser;
-import com.company.design.proxy.BrowserProxy;
-import com.company.design.proxy.IBrowser;
-import com.company.design.singleton.AClazz;
-import com.company.design.singleton.BClazz;
-import com.company.design.singleton.SocketClient;
+import com.company.design.decorator.A3;
+import com.company.design.decorator.A4;
+import com.company.design.decorator.A5;
+import com.company.design.decorator.Audi;
+import com.company.design.decorator.Icar;
 
 public class Main {
 
 	public static void main(String[] args) {
+		/**
+		 * decorator
+		 */
+		Icar audi = new Audi(1000);
+		audi.showPrice();
+		
+		//a3
+		Icar audi3 = new A3(audi, "A3");
+		audi3.showPrice();
+		//a4
+		Icar audi4 = new A4(audi, "A4");
+		audi4.showPrice();
+		
+		//a5
+		Icar audi5 = new A5(audi, "A5");
+		audi5.showPrice();
+		
+		
+		
 		/**
 		 * singleton
 		 * 
@@ -77,4 +91,6 @@ public class Main {
 	 * // 콘센트 public static void connect(Electronic110V electronic110V) {
 	 * electronic110V.powerOn(); }
 	 */
+	
+
 }
