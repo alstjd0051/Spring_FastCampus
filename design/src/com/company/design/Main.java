@@ -1,33 +1,56 @@
 package com.company.design;
 
-import com.company.design.decorator.A3;
-import com.company.design.decorator.A4;
-import com.company.design.decorator.A5;
-import com.company.design.decorator.Audi;
-import com.company.design.decorator.Icar;
-
 public class Main {
 
 	public static void main(String[] args) {
+		
+		/*
+		 * facade
+		 * 
+		 *  Ftp ftpClient = new Ftp("www.naver.com", 22, "/home/etc");
+		 * ftpClient.connect(); ftpClient.moveDirectory();
+		 * 
+		 * Writer writer = new Writer("text.tmp"); writer.fileConnect(); writer.write();
+		 * 
+		 * Reader reader = new Reader("text.tmp"); reader.fileConnect();
+		 * reader.fileRead();
+		 * 
+		 * reader.fileDisConnect(); writer.fileDisConnect(); ftpClient.disConnect();
+		 * 
+		 * SftpClient sftpClient = new SftpClient("www.naver.com", 22, "home/etc",
+		 * "text.tmp"); sftpClient.connect();
+		 * 
+		 * sftpClient.read();
+		 * 
+		 * sftpClient.disConnect();
+		 */
+
+		/*
+		 * observer
+		 * 
+		 * Button button = new Button("버튼");
+		 * 
+		 * button.addListner(new IbuttonListener() {
+		 * 
+		 * @Override public void clickEvent(String event) { System.out.println(event); }
+		 * });
+		 * 
+		 * 
+		 * button.click("메시지 전달 :click1"); button.click("메시지 전달 :click2");
+		 * button.click("메시지 전달 :click3"); button.click("메시지 전달 :click4");
+		 */
+
 		/**
 		 * decorator
-		 */
-		Icar audi = new Audi(1000);
-		audi.showPrice();
-		
-		//a3
-		Icar audi3 = new A3(audi, "A3");
-		audi3.showPrice();
-		//a4
-		Icar audi4 = new A4(audi, "A4");
-		audi4.showPrice();
-		
-		//a5
-		Icar audi5 = new A5(audi, "A5");
-		audi5.showPrice();
-		
-		
-		
+		 *//*
+			 * Icar audi = new Audi(1000); audi.showPrice();
+			 * 
+			 * //a3 Icar audi3 = new A3(audi, "A3"); audi3.showPrice(); //a4 Icar audi4 =
+			 * new A4(audi, "A4"); audi4.showPrice();
+			 * 
+			 * //a5 Icar audi5 = new A5(audi, "A5"); audi5.showPrice();
+			 */
+
 		/**
 		 * singleton
 		 * 
@@ -42,8 +65,9 @@ public class Main {
 		 * 
 		 * 
 		 */
-		
-		/*Adapter
+
+		/*
+		 * Adapter
 		 * 
 		 * HairDryer hairDryer = new HairDryer(); connect(hairDryer);
 		 * 
@@ -57,11 +81,10 @@ public class Main {
 		 */
 
 		/*
-		 * proxy
-		 * Browser browser = new Browser("www.google.com"); browser.show();
+		 * proxy Browser browser = new Browser("www.google.com"); browser.show();
 		 * browser.show(); browser.show(); browser.show(); browser.show();
 		 */
-		
+
 //		//처음만 proxy해주고 나머지는 cache해준다.
 //		IBrowser browser = new BrowserProxy("www.naver.com");
 //		browser.show();
@@ -71,8 +94,9 @@ public class Main {
 //		browser.show();
 //		browser.show();
 
-		/*proxy pattern
-		 * AtomicLong start = new AtomicLong(); AtomicLong end = new AtomicLong();
+		/*
+		 * proxy pattern AtomicLong start = new AtomicLong(); AtomicLong end = new
+		 * AtomicLong();
 		 * 
 		 * IBrowser aopBrowser = new AopBrowser("www.naver.com", ()-> {
 		 * System.out.println("before"); start.set(System.currentTimeMillis()); }, ()->
@@ -81,16 +105,15 @@ public class Main {
 		 * 
 		 * aopBrowser.show(); System.out.println("loading time : " +end.get());
 		 */
-		
-		
+
 	}
-	
-	/*adapter
+
+	/*
+	 * adapter
 	 * 
 	 * 
 	 * // 콘센트 public static void connect(Electronic110V electronic110V) {
 	 * electronic110V.powerOn(); }
 	 */
-	
 
 }
