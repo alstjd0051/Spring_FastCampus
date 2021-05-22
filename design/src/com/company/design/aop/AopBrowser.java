@@ -6,7 +6,7 @@ import com.company.design.proxy.IBrowser;
 public class AopBrowser implements IBrowser {
 	/**
 	 * AOP특징
-	 * - 전후매시지
+	 * - 전후메시지
 	 */
 	
 	private String url;

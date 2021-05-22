@@ -1,8 +1,37 @@
 package com.company.design;
 
+import com.company.design.strategy.Base64Strategy;
+import com.company.design.strategy.Encoder;
+import com.company.design.strategy.EncodingStrategy;
+import com.company.design.strategy.NormalStrategy;
+
 public class Main {
 
 	public static void main(String[] args) {
+		/**
+		 * Strategy
+		 */
+		Encoder encoder = new Encoder();
+		
+		//base 64
+		EncodingStrategy base64 = new Base64Strategy();
+		
+		//nomal
+		EncodingStrategy nomal = new NormalStrategy();
+		
+		String message = "hello java";
+		encoder.setEncodingStrategy(base64);
+		String base64Result = encoder.getMessage(message);
+		System.out.println(base64Result);
+		
+		encoder.setEncodingStrategy(nomal);
+		String nomalResult = encoder.getMessage(message);
+		System.out.println(nomalResult);
+		
+		encoder.setEncodingStrategy(new AppendStrategy());
+		String appendStrategy = encoder.getMessage(message);
+		System.out.println(appendStrategy);
+		
 		
 		/*
 		 * facade
